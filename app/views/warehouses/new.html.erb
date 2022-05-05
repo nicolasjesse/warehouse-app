@@ -1,0 +1,31 @@
+<%= form_with model: @warehouse do |form| %>
+  <div>
+    <%= form.label :name, 'Nome' %>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.label :description, 'Descrição' %>
+    <%= form.text_area :description %>
+  </div>
+  <div>
+    <%= form.label :code, 'Código' %>
+    <%= form.text_field :code %>
+  </div>
+  <div>
+    <%= form.label :city, 'Cidade' %>
+    <%= form.text_field :city %>
+  </div>
+  <div>
+    <%= form.label :address, 'Endereço' %>
+    <%= form.text_field :address %>
+  </div>
+  <div>
+    <%= form.label :CEP, 'CEP' %>
+    <%= form.text_field :CEP %>
+  </div>
+  <div>
+    <%= form.label :area, 'Área' %>
+    <%= form.number_field :area %>
+  </div>
+  <%= form.submit 'Criar Galpão' %>
+<% end %>
