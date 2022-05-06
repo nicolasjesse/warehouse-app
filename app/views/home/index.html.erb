@@ -1,7 +1,7 @@
 <h1>Galpões & Estoque</h1>
 
 <h2>Galpões</h2>
-
+<%= flash[:notice] %>
 <%= link_to 'Cadastrar Galpão', new_warehouse_path %>
 
 <% if @warehouses.empty? %>
