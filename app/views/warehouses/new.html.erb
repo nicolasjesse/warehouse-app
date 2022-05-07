@@ -1,31 +1,68 @@
 <%= form_with model: @warehouse do |form| %>
   <div>
-    <%= form.label :name, 'Nome' %>
-    <%= form.text_field :name %>
+    <div>
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+    <% @warehouse.errors.messages[:name].each do |name_error| %>
+      <div class="input-errors">
+        <%= name_error %>
+      </div>
+    <% end %>
   </div>
   <div>
-    <%= form.label :description, 'Descrição' %>
+    <%= form.label :description %>
     <%= form.text_area :description %>
+    <% @warehouse.errors.messages[:description].each do |description_error| %>
+      <div class="input-errors">
+        <%= description_error %>
+      </div>
+    <% end %>
   </div>
   <div>
-    <%= form.label :code, 'Código' %>
+    <%= form.label :code %>
     <%= form.text_field :code %>
+    <% @warehouse.errors.messages[:code].each do |code_error| %>
+      <div class="input-errors">
+        <%= code_error %>
+      </div>
+    <% end %>
   </div>
   <div>
-    <%= form.label :city, 'Cidade' %>
+    <%= form.label :city %>
     <%= form.text_field :city %>
+    <% @warehouse.errors.messages[:city].each do |city_error| %>
+      <div class="input-errors">
+        <%= city_error %>
+      </div>
+    <% end %>
   </div>
   <div>
-    <%= form.label :address, 'Endereço' %>
+    <%= form.label :address %>
     <%= form.text_field :address %>
+    <% @warehouse.errors.messages[:address].each do |address_error| %>
+      <div class="input-errors">
+        <%= address_error %>
+      </div>
+    <% end %>
   </div>
   <div>
-    <%= form.label :CEP, 'CEP' %>
+    <%= form.label :CEP %>
     <%= form.text_field :CEP %>
+    <% @warehouse.errors.messages[:CEP].each do |cep_error| %>
+      <div class="input-errors">
+        <%= cep_error %>
+      </div>
+    <% end %>
   </div>
   <div>
-    <%= form.label :area, 'Área' %>
+    <%= form.label :area %>
     <%= form.number_field :area %>
+    <% @warehouse.errors.messages[:area].each do |area_error| %>
+      <div class="input-errors">
+        <%= area_error %>
+      </div>
+    <% end %>
   </div>
-  <%= form.submit 'Criar Galpão' %>
+  <%= form.submit %>
 <% end %>

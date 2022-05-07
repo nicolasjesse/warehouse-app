@@ -47,8 +47,11 @@ describe 'Usuário cadastra um galpão' do
       click_on 'Cadastrar Galpão'
       fill_in 'Nome', with: ''
       fill_in 'Descrição', with: ''
+      fill_in 'Código', with: ''
       click_on 'Criar Galpão'
 
-      expect(page).to have_content 'Galpão não cadastrado'
+      expect(page).to have_content 'Não foi possível cadastrar o Galpão.'
+      expect(page).to have_content 'não pode ficar em branco'
+      expect(page).to have_content 'não possui o tamanho esperado (3 caracteres)'
     end
 end
