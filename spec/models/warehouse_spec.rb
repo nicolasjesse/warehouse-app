@@ -77,5 +77,29 @@ RSpec.describe Warehouse, type: :model do
 
       expect(second_warehouse).to_not be_valid
     end
+
+    it 'false when cep has no exactly 5 numbers before -' do
+      warehouse = Warehouse.create(name: 'Rio', code: 'RIO', address: 'Address',
+                                         CEP: '1234-000', city: 'Rio', area: 1000,
+                                         description: 'Some description')
+                                        
+      expect(warehouse).to_not be_valid                                        
+    end
+
+    it 'false when cep has no exactly 3 numbers after -' do
+      warehouse = Warehouse.create(name: 'Rio', code: 'RIO', address: 'Address',
+                                         CEP: '25000-12', city: 'Rio', area: 1000,
+                                         description: 'Some description')
+                                        
+      expect(warehouse).to_not be_valid                                        
+    end
+
+    it 'false when cep has no -' do
+      warehouse = Warehouse.create(name: 'Rio', code: 'RIO', address: 'Address',
+                                         CEP: '25000000', city: 'Rio', area: 1000,
+                                         description: 'Some description')
+                                        
+      expect(warehouse).to_not be_valid                                        
+    end
   end
 end
