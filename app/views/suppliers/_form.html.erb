@@ -1,0 +1,68 @@
+<%= form_with model: @supplier do |form| %>
+  <div>
+    <div>
+      <%= form.label :corporate_name %>
+      <%= form.text_field :corporate_name %>
+    </div>
+    <% @warehouse.errors.messages[:corporate_name].each do |corporate_name_error| %>
+      <div class="input-errors">
+        <%= corporate_name_error %>
+      </div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :brand_name %>
+    <%= form.text_area :brand_name %>
+    <% @warehouse.errors.messages[:brand_name].each do |brand_name_error| %>
+      <div class="input-errors">
+        <%= brand_name_error %>
+      </div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :full_address %>
+    <%= form.text_field :full_address %>
+    <% @warehouse.errors.messages[:full_address].each do |full_address_error| %>
+      <div class="input-errors">
+        <%= full_address_error %>
+      </div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :registration_number %>
+    <%= form.text_field :registration_number %>
+    <% @warehouse.errors.messages[:registration_number].each do |registration_number_error| %>
+      <div class="input-errors">
+        <%= registration_number_error %>
+      </div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :city %>
+    <%= form.text_field :city %>
+    <% @warehouse.errors.messages[:city].each do |city_error| %>
+      <div class="input-errors">
+        <%= city_error %>
+      </div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :state %>
+    <%= form.text_field :state %>
+    <% @warehouse.errors.messages[:state].each do |state_error| %>
+      <div class="input-errors">
+        <%= state_error %>
+      </div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :email %>
+    <%= form.number_field :email %>
+    <% @warehouse.errors.messages[:email].each do |email_error| %>
+      <div class="input-errors">
+        <%= email_error %>
+      </div>
+    <% end %>
+  </div>
+  <%= form.submit %>
+<% end %>

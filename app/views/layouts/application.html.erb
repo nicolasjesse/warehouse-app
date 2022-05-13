@@ -10,7 +10,12 @@
   </head>
 
   <body>
-    <h1>Galpões & Estoque</h1>
+    <header>
+      <nav>
+        <h1>Galpões & Estoque</h1>
+        <%= link_to 'Fornecedores', suppliers_path %>
+      </nav>
+    </header>
     <%= flash[:notice] %>
     <%= yield %>
   </body>
