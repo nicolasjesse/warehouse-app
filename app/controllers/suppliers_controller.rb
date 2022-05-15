@@ -15,7 +15,7 @@ class SuppliersController < ApplicationController
     @supplier = Supplier.new(supplier_params)
     if @supplier.save
       flash[:notice] = "Fornecedor cadastrado com sucesso."
-      return redirect_to root_path
+      return redirect_to supplies_path
     else
       flash.now[:notice] = "Não foi possível cadastrar o Fornecedor."
       render 'new'
