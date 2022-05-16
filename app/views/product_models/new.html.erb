@@ -1,0 +1,75 @@
+<h1>Cadastrar Novo Modelo de Produto</h1>
+
+<%= form_with model: @product_model do |form| %>
+  <div>
+    <div>
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+    <% @product_model.errors.messages[:name].each do |name_error| %>
+      <div class="input-errors">
+        <%= name_error %>
+      </div>
+    <% end %>
+  </div>
+  <div>
+    <div>
+      <%= form.label :weight %>
+      <%= form.number_field :weight %>
+    </div>
+    <% @product_model.errors.messages[:weight].each do |weight_error| %>
+      <div class="input-errors">
+        <%= weight_error %>
+      </div>
+    <% end %>
+  </div>
+  <div>
+    <div>
+      <%= form.label :height %>
+      <%= form.number_field :height %>
+    </div>
+    <% @product_model.errors.messages[:height].each do |height_error| %>
+      <div class="input-errors">
+        <%= height_error %>
+      </div>
+    <% end %>
+  </div>
+  <div>
+    <div>
+      <%= form.label :width %>
+      <%= form.number_field :width %>
+    </div>
+    <% @product_model.errors.messages[:width].each do |width_error| %>
+      <div class="input-errors">
+        <%= width_error %>
+      </div>
+    <% end %>
+  </div>
+  <div>
+    <div>
+      <%= form.label :depth %>
+      <%= form.number_field :depth %>
+    </div>
+    <% @product_model.errors.messages[:depth].each do |depth_error| %>
+      <div class="input-errors">
+        <%= depth_error %>
+      </div>
+    <% end %>
+  </div>
+  <div>
+    <div>
+      <%= form.label :sku %>
+      <%= form.text_field :sku %>
+    </div>
+    <% @product_model.errors.messages[:sku].each do |sku_error| %>
+      <div class="input-errors">
+        <%= sku_error %>
+      </div>
+    <% end %>
+  </div>
+  <div>
+      <%= form.label :supplier_id %>
+      <%= form.collection_select :supplier_id, @suppliers, :id, :brand_name %>
+  </div>
+  <%= form.submit 'Enviar' %>
+<% end %>
