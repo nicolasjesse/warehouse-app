@@ -17,8 +17,13 @@ class ProductModelsController < ApplicationController
                                                                  :depth, :weight, :sku,
                                                                  :supplier_id)
     @product_model = ProductModel.new(product_model_params)
-    @product_model.save           
+    if @product_model.save           
+      redirect_to @product_model, notice: 'Modelo de produto cadastrado com sucesso.'
+    else
+      @suppliers = Supplier.all
+      flash.now[:notice] = 'Não foi possível cadastrar o modelo do produto.'
+      render 'new'
+    end
 
-    redirect_to @product_model, notice: 'Modelo de produto cadastrado com sucesso.'
   end
 end

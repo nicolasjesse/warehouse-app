@@ -10,9 +10,11 @@ describe 'User see suppliers' do
 
   it 'successfully' do
     Supplier.create!(corporate_name: 'ACME LTDA', brand_name: 'ACME', registration_number: '43447216000102',
-                     full_address: 'Av das Palmas, 100', city: 'Bauru', state: 'SP', email: 'contato@acme.com')
+                     full_address: 'Av das Palmas, 100', city: 'Bauru', state: 'SP', email: 'contato@acme.com',
+                     cnpj: '78607805000195')
     Supplier.create!(corporate_name: 'Spark LTDA', brand_name: 'Spark', registration_number: '24347216000102',
-                     full_address: 'Torre da Indústria, 1', city: 'Teresina', state: 'PI', email: 'contato@spark.com')
+                     full_address: 'Torre da Indústria, 1', city: 'Teresina', state: 'PI', email: 'contato@spark.com',
+                     cnpj: '34828668000143')
 
     visit root_path
     click_on 'Fornecedores'
